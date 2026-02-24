@@ -689,6 +689,7 @@
     <LibraryClasses>
 !ifdef $(CSM_ENABLE)
 !error "CSM is being torn down"
+      NULL|OvmfPkg/Bhyve/Csm/CsmSupportLib/CsmSupportLib.inf
 !endif
   }
 >>>>>>> parent of eccdab611c (OvmfPkg: remove CSM_ENABLE build macro)
@@ -734,6 +735,7 @@
   MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
   MdeModulePkg/Universal/SetupBrowserDxe/SetupBrowserDxe.inf
   MdeModulePkg/Universal/DisplayEngineDxe/DisplayEngineDxe.inf
+  MdeModulePkg/Universal/MemoryTest/NullMemoryTestDxe/NullMemoryTestDxe.inf
 
   OvmfPkg/Bhyve/BhyveRfbDxe/BhyveRfbDxe.inf {
     <LibraryClasses>
@@ -787,8 +789,12 @@
   MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 !include OvmfPkg/Include/Dsc/ShellComponents.dsc.inc
 =======
+=======
+#  OvmfPkg/Csm/LegacyBiosDxe/LegacyBiosDxe.inf
+>>>>>>> parent of 934b7f5a73 (OvmfPkg: exclude LegacyBiosDxe)
 !ifdef $(CSM_ENABLE)
   OvmfPkg/Bhyve/Csm/BhyveCsm16/BhyveCsm16.inf
 !endif
