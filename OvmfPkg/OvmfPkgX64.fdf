@@ -254,7 +254,12 @@ INF  UefiCpuPkg/CpuIo2Dxe/CpuIo2Dxe.inf
 INF  UefiCpuPkg/CpuDxe/CpuDxe.inf
 INF  FILE_GUID = $(UP_CPU_DXE_GUID) UefiCpuPkg/CpuDxe/CpuDxe.inf
 
-INF  OvmfPkg/LocalApicTimerDxe/LocalApicTimerDxe.inf
+!ifdef $(CSM_ENABLE)
+  INF  OvmfPkg/8259InterruptControllerDxe/8259.inf
+  INF  OvmfPkg/8254TimerDxe/8254Timer.inf
+!else
+  INF  OvmfPkg/LocalApicTimerDxe/LocalApicTimerDxe.inf
+!endif
 INF  OvmfPkg/IncompatiblePciDeviceSupportDxe/IncompatiblePciDeviceSupport.inf
 INF  OvmfPkg/PciHotPlugInitDxe/PciHotPlugInit.inf
 INF  MdeModulePkg/Bus/Pci/PciHostBridgeDxe/PciHostBridgeDxe.inf
@@ -545,7 +550,16 @@ FILE FV_IMAGE = 9E21FD93-9C72-4c15-8C4B-E77F1DB2D792 {
     VERSION   STRING="$(INF_VERSION)" Optional BUILD_NUM=$(BUILD_NUMBER)
   }
 
+<<<<<<< HEAD
 [Rule.Common.USER_DEFINED.RESET_VECTOR]
+=======
+[Rule.Common.USER_DEFINED.CSM]
+  FILE FREEFORM = $(NAMED_GUID) {
+    RAW BIN                |.bin
+  }
+
+[Rule.Common.SEC.RESET_VECTOR]
+>>>>>>> parent of 528ae029ad (OvmfPkg: remove Rule.Common.USER_DEFINED.CSM from all FDF files)
   FILE RAW = $(NAMED_GUID) {
     RAW BIN   Align = 16   |.bin
   }
