@@ -690,6 +690,7 @@
 !ifdef $(CSM_ENABLE)
 !error "CSM is being torn down"
       NULL|OvmfPkg/Bhyve/Csm/CsmSupportLib/CsmSupportLib.inf
+      NULL|OvmfPkg/Csm/LegacyBootManagerLib/LegacyBootManagerLib.inf
 !endif
   }
 >>>>>>> parent of eccdab611c (OvmfPkg: remove CSM_ENABLE build macro)
@@ -699,6 +700,10 @@
       NULL|MdeModulePkg/Library/DeviceManagerUiLib/DeviceManagerUiLib.inf
       NULL|MdeModulePkg/Library/BootManagerUiLib/BootManagerUiLib.inf
       NULL|MdeModulePkg/Library/BootMaintenanceManagerUiLib/BootMaintenanceManagerUiLib.inf
+!ifdef $(CSM_ENABLE)
+      NULL|OvmfPkg/Csm/LegacyBootManagerLib/LegacyBootManagerLib.inf
+      NULL|OvmfPkg/Csm/LegacyBootMaintUiLib/LegacyBootMaintUiLib.inf
+!endif
   }
   OvmfPkg/VirtioPciDeviceDxe/VirtioPciDeviceDxe.inf
   OvmfPkg/Virtio10Dxe/Virtio10.inf
