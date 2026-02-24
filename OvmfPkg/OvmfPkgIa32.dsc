@@ -466,22 +466,9 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutGopSupport|TRUE
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutUgaSupport|FALSE
   gEfiMdeModulePkgTokenSpaceGuid.PcdInstallAcpiSdtProtocol|TRUE
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-!ifdef $(CSM_ENABLE)
-<<<<<<< HEAD
-=======
-!error "CSM is being torn down"
->>>>>>> parent of 3099db510e (OvmfPkg: remove PcdCsmEnable)
-  gUefiOvmfPkgTokenSpaceGuid.PcdCsmEnable|TRUE
-!endif
->>>>>>> parent of 506cc670c0 (OvmfPkg: cripple CSM_ENABLE macro)
-=======
 !ifdef $(CSM_ENABLE)
 !error "CSM is being torn down"
 !endif
->>>>>>> parent of eccdab611c (OvmfPkg: remove CSM_ENABLE build macro)
 !if $(SMM_REQUIRE) == TRUE
   gUefiOvmfPkgTokenSpaceGuid.PcdSmmSmramRequire|TRUE
   gUefiCpuPkgTokenSpaceGuid.PcdCpuHotPlugSupport|TRUE
@@ -589,10 +576,6 @@
   gUefiCpuPkgTokenSpaceGuid.PcdCpuSmmStackSize|0x4000
 !endif
 
-<<<<<<< HEAD
-  # Point to the MdeModulePkg/Application/BootManagerMenuApp/BootManagerMenuApp.inf
-  gEfiMdeModulePkgTokenSpaceGuid.PcdBootManagerMenuFile|{ 0xdc, 0x5b, 0xc2, 0xee, 0xf2, 0x67, 0x95, 0x4d, 0xb1, 0xd5, 0xf8, 0x1b, 0x20, 0x39, 0xd1, 0x1d }
-=======
   # IRQs 5, 9, 10, 11 are level-triggered
   gUefiOvmfPkgTokenSpaceGuid.Pcd8259LegacyModeEdgeLevel|0x0E20
 

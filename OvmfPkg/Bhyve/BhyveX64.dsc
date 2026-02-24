@@ -672,19 +672,6 @@
   MdeModulePkg/Universal/Metronome/Metronome.inf
   PcAtChipsetPkg/PcatRealTimeClockRuntimeDxe/PcatRealTimeClockRuntimeDxe.inf
   MdeModulePkg/Universal/DriverHealthManagerDxe/DriverHealthManagerDxe.inf
-<<<<<<< HEAD
-<<<<<<< HEAD
-  MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
-=======
-  MdeModulePkg/Universal/BdsDxe/BdsDxe.inf {
-    <LibraryClasses>
-!ifdef $(CSM_ENABLE)
-      NULL|OvmfPkg/Bhyve/Csm/CsmSupportLib/CsmSupportLib.inf
-      NULL|OvmfPkg/Csm/LegacyBootManagerLib/LegacyBootManagerLib.inf
-!endif
-  }
->>>>>>> parent of 506cc670c0 (OvmfPkg: cripple CSM_ENABLE macro)
-=======
   MdeModulePkg/Universal/BdsDxe/BdsDxe.inf {
     <LibraryClasses>
 !ifdef $(CSM_ENABLE)
@@ -693,7 +680,6 @@
       NULL|OvmfPkg/Csm/LegacyBootManagerLib/LegacyBootManagerLib.inf
 !endif
   }
->>>>>>> parent of eccdab611c (OvmfPkg: remove CSM_ENABLE build macro)
   MdeModulePkg/Logo/LogoDxe.inf
   MdeModulePkg/Application/UiApp/UiApp.inf {
     <LibraryClasses>
@@ -793,22 +779,13 @@
   MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf
   MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-!include OvmfPkg/Include/Dsc/ShellComponents.dsc.inc
-=======
-=======
-=======
 !ifdef $(CSM_ENABLE)
   IntelFrameworkModulePkg/Csm/BiosThunk/VideoDxe/VideoDxe.inf {
     <LibraryClasses>
       PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
   }
 !endif
->>>>>>> parent of ac79397267 (OvmfPkg: exclude the CSM-based VideoDxe driver)
 #  OvmfPkg/Csm/LegacyBiosDxe/LegacyBiosDxe.inf
->>>>>>> parent of 934b7f5a73 (OvmfPkg: exclude LegacyBiosDxe)
 !ifdef $(CSM_ENABLE)
   OvmfPkg/Bhyve/Csm/BhyveCsm16/BhyveCsm16.inf
 !endif
