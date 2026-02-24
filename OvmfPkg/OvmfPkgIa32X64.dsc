@@ -475,6 +475,10 @@
 <<<<<<< HEAD
 =======
 !ifdef $(CSM_ENABLE)
+<<<<<<< HEAD
+=======
+!error "CSM is being torn down"
+>>>>>>> parent of 3099db510e (OvmfPkg: remove PcdCsmEnable)
   gUefiOvmfPkgTokenSpaceGuid.PcdCsmEnable|TRUE
 !endif
 >>>>>>> parent of 506cc670c0 (OvmfPkg: cripple CSM_ENABLE macro)
