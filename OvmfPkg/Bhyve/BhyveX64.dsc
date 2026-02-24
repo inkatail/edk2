@@ -672,7 +672,17 @@
   MdeModulePkg/Universal/Metronome/Metronome.inf
   PcAtChipsetPkg/PcatRealTimeClockRuntimeDxe/PcatRealTimeClockRuntimeDxe.inf
   MdeModulePkg/Universal/DriverHealthManagerDxe/DriverHealthManagerDxe.inf
+<<<<<<< HEAD
   MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
+=======
+  MdeModulePkg/Universal/BdsDxe/BdsDxe.inf {
+    <LibraryClasses>
+!ifdef $(CSM_ENABLE)
+      NULL|OvmfPkg/Bhyve/Csm/CsmSupportLib/CsmSupportLib.inf
+      NULL|OvmfPkg/Csm/LegacyBootManagerLib/LegacyBootManagerLib.inf
+!endif
+  }
+>>>>>>> parent of 506cc670c0 (OvmfPkg: cripple CSM_ENABLE macro)
   MdeModulePkg/Logo/LogoDxe.inf
   MdeModulePkg/Application/UiApp/UiApp.inf {
     <LibraryClasses>
