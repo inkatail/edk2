@@ -206,6 +206,7 @@
   gEfiLegacyBiosProtocolGuid            = {0xdb9a1e3d, 0x45cb, 0x4abb, {0x85, 0x3b, 0xe5, 0x38, 0x7f, 0xdb, 0x2e, 0x2d}}
   gEfiLegacyBiosPlatformProtocolGuid    = {0x783658a3, 0x4172, 0x4421, {0xa2, 0x99, 0xe0, 0x09, 0x07, 0x9c, 0x0c, 0xb4}}
   gEfiLegacyInterruptProtocolGuid       = {0x31ce593d, 0x108a, 0x485d, {0xad, 0xb2, 0x78, 0xf2, 0x1f, 0x29, 0x66, 0xbe}}
+  gEfiVgaMiniPortProtocolGuid           = {0xc7735a2f, 0x88f5, 0x4882, {0xae, 0x63, 0xfa, 0xac, 0x8c, 0x8b, 0x86, 0xb3}}
   gOvmfLoadedX86LinuxKernelProtocolGuid = {0xa3edc05d, 0xb618, 0x4ff6, {0x95, 0x52, 0x76, 0xd7, 0x88, 0x63, 0x43, 0xc8}}
   gOvmfSevMemoryAcceptanceProtocolGuid  = {0xc5a010fe, 0x38a7, 0x4531, {0x8a, 0x4a, 0x05, 0x00, 0xd2, 0xfd, 0x16, 0x49}}
   gQemuAcpiTableNotifyProtocolGuid      = {0x928939b2, 0x4235, 0x462f, {0x95, 0x80, 0xf6, 0xa2, 0xb2, 0xc2, 0x1a, 0x4f}}
@@ -306,6 +307,26 @@
   #  mode's interrrupt controller.
   #  For the corresponding bits, 0 = Edge triggered and 1 = Level triggered.
   gUefiOvmfPkgTokenSpaceGuid.Pcd8259LegacyModeEdgeLevel|0x0000|UINT16|0x5
+
+  ## Indicates if BiosVideo driver will switch to 80x25 Text VGA Mode when
+  #  exiting boot service.
+  #   TRUE  - Switch to Text VGA Mode.
+  #   FALSE - Does not switch to Text VGA Mode.
+  gUefiOvmfPkgTokenSpaceGuid.PcdBiosVideoSetTextVgaModeEnable|FALSE|BOOLEAN|0x28
+
+  ## Indicates if BiosVideo driver will check for VESA BIOS Extension service
+  #  support.
+  #   TRUE  - Check for VESA BIOS Extension service.
+  #   FALSE - Does not check for VESA BIOS Extension service.
+  gUefiOvmfPkgTokenSpaceGuid.PcdBiosVideoCheckVbeEnable|TRUE|BOOLEAN|0x29
+
+  ## Indicates if BiosVideo driver will check for VGA service support.
+  #  NOTE: If both PcdBiosVideoCheckVbeEnable and PcdBiosVideoCheckVgaEnable
+  #  are set to FALSE, that means Graphics Output protocol will not be
+  #  installed, the VGA miniport protocol will be installed instead.
+  #   TRUE  - Check for VGA service.<BR>
+  #   FALSE - Does not check for VGA service.<BR>
+  gUefiOvmfPkgTokenSpaceGuid.PcdBiosVideoCheckVgaEnable|TRUE|BOOLEAN|0x2a
 
   ## Indicates if memory space for legacy region will be set as cacheable.
   #   TRUE  - Set cachebility for legacy region.

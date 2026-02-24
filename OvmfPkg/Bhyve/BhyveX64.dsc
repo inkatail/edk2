@@ -790,9 +790,18 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 !include OvmfPkg/Include/Dsc/ShellComponents.dsc.inc
 =======
 =======
+=======
+!ifdef $(CSM_ENABLE)
+  IntelFrameworkModulePkg/Csm/BiosThunk/VideoDxe/VideoDxe.inf {
+    <LibraryClasses>
+      PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+  }
+!endif
+>>>>>>> parent of ac79397267 (OvmfPkg: exclude the CSM-based VideoDxe driver)
 #  OvmfPkg/Csm/LegacyBiosDxe/LegacyBiosDxe.inf
 >>>>>>> parent of 934b7f5a73 (OvmfPkg: exclude LegacyBiosDxe)
 !ifdef $(CSM_ENABLE)

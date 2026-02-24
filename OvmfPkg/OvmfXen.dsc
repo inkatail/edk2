@@ -728,6 +728,10 @@
 !include OvmfPkg/Include/Dsc/ShellComponents.dsc.inc
 =======
 !ifdef $(CSM_ENABLE)
+  OvmfPkg/Csm/BiosThunk/VideoDxe/VideoDxe.inf {
+    <LibraryClasses>
+      PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+  }
   OvmfPkg/Csm/LegacyBiosDxe/LegacyBiosDxe.inf
   OvmfPkg/Csm/Csm16/Csm16.inf
 !endif
