@@ -473,6 +473,7 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutUgaSupport|FALSE
   gEfiMdeModulePkgTokenSpaceGuid.PcdInstallAcpiSdtProtocol|TRUE
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 !ifdef $(CSM_ENABLE)
 <<<<<<< HEAD
@@ -482,6 +483,11 @@
   gUefiOvmfPkgTokenSpaceGuid.PcdCsmEnable|TRUE
 !endif
 >>>>>>> parent of 506cc670c0 (OvmfPkg: cripple CSM_ENABLE macro)
+=======
+!ifdef $(CSM_ENABLE)
+!error "CSM is being torn down"
+!endif
+>>>>>>> parent of eccdab611c (OvmfPkg: remove CSM_ENABLE build macro)
 !if $(SMM_REQUIRE) == TRUE
   gUefiOvmfPkgTokenSpaceGuid.PcdSmmSmramRequire|TRUE
   gUefiCpuPkgTokenSpaceGuid.PcdCpuHotPlugSupport|TRUE

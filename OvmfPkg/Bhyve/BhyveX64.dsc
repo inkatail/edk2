@@ -673,6 +673,7 @@
   PcAtChipsetPkg/PcatRealTimeClockRuntimeDxe/PcatRealTimeClockRuntimeDxe.inf
   MdeModulePkg/Universal/DriverHealthManagerDxe/DriverHealthManagerDxe.inf
 <<<<<<< HEAD
+<<<<<<< HEAD
   MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
 =======
   MdeModulePkg/Universal/BdsDxe/BdsDxe.inf {
@@ -683,6 +684,14 @@
 !endif
   }
 >>>>>>> parent of 506cc670c0 (OvmfPkg: cripple CSM_ENABLE macro)
+=======
+  MdeModulePkg/Universal/BdsDxe/BdsDxe.inf {
+    <LibraryClasses>
+!ifdef $(CSM_ENABLE)
+!error "CSM is being torn down"
+!endif
+  }
+>>>>>>> parent of eccdab611c (OvmfPkg: remove CSM_ENABLE build macro)
   MdeModulePkg/Logo/LogoDxe.inf
   MdeModulePkg/Application/UiApp/UiApp.inf {
     <LibraryClasses>
