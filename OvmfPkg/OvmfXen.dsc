@@ -704,6 +704,10 @@
 
 !include OvmfPkg/Include/Dsc/ShellComponents.dsc.inc
 
+!ifdef $(CSM_ENABLE)
+  OvmfPkg/Csm/Csm16/Csm16.inf
+!endif
+
   OvmfPkg/PlatformDxe/Platform.inf
   OvmfPkg/AmdSevDxe/AmdSevDxe.inf {
     <LibraryClasses>

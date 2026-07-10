@@ -1055,6 +1055,10 @@
 !include OvmfPkg/Include/Dsc/OvmfRngComponents.dsc.inc
 !include OvmfPkg/Include/Dsc/OvmfOptHwComponents.dsc.inc
 
+!ifdef $(CSM_ENABLE)
+  OvmfPkg/Csm/Csm16/Csm16.inf
+!endif
+
 !if $(SECURE_BOOT_ENABLE) == TRUE
   SecurityPkg/VariableAuthenticated/SecureBootConfigDxe/SecureBootConfigDxe.inf
   OvmfPkg/IgvmSecureBootDxe/IgvmSecureBootDxe.inf
