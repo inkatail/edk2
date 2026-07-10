@@ -597,3 +597,8 @@
   ## Informs modules whether the platform firmware supports Standalone MM.
   #
   gUefiOvmfPkgTokenSpaceGuid.PcdStandaloneMmEnable|FALSE|BOOLEAN|0x100065
+
+  ## Informs modules (including pre-DXE-phase modules) whether the platform
+  #  firmware contains a CSM (Compatibility Support Module).
+  #
+  gUefiOvmfPkgTokenSpaceGuid.PcdCsmEnable|FALSE|BOOLEAN|0x35
