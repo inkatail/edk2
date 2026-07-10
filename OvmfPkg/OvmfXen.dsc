@@ -711,6 +711,7 @@
 !include OvmfPkg/Include/Dsc/ShellComponents.dsc.inc
 
 !ifdef $(CSM_ENABLE)
+  OvmfPkg/Csm/LegacyBiosDxe/LegacyBiosDxe.inf
   OvmfPkg/Csm/Csm16/Csm16.inf
 !endif
 

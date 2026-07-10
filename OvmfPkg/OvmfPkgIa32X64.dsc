@@ -928,6 +928,7 @@
 !include OvmfPkg/Include/Dsc/OvmfOptHwComponents.dsc.inc
 
 !ifdef $(CSM_ENABLE)
+  OvmfPkg/Csm/LegacyBiosDxe/LegacyBiosDxe.inf
   OvmfPkg/Csm/Csm16/Csm16.inf
 !endif
 
