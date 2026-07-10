@@ -818,6 +818,10 @@
 !include OvmfPkg/Include/Dsc/OvmfOptHwComponents.dsc.inc
 
 !ifdef $(CSM_ENABLE)
+  IntelFrameworkModulePkg/Csm/BiosThunk/VideoDxe/VideoDxe.inf {
+    <LibraryClasses>
+      PcdLib|MdePkg/Library/DxePcdLib/DxePcdLib.inf
+  }
   OvmfPkg/Bhyve/Csm/BhyveCsm16/BhyveCsm16.inf
 !endif
 
