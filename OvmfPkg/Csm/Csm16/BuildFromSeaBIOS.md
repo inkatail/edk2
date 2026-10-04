@@ -41,6 +41,26 @@ the reserved region — lower `CONFIG_ROM_SIZE` (e.g. 192 KB total budget
 including padding, see tianocore/edk2 issue #82 discussion) and
 rebuild.
 
+## Staying within 128 KiB
+
+The payload must fit the `0xE0000-0xFFFFF` shadow window, so
+`CONFIG_ROM_SIZE=128` is effectively mandatory. A full-featured build
+uses ~97% of that budget. If a future SeaBIOS update overflows it,
+trim in this order (correctness impact smallest first):
+
+1. `CONFIG_TCGBIOS=n` — drops legacy-OS TPM services (e.g. Win7
+   BitLocker); OVMF keeps its own TPM stack for UEFI boot.
+2. `CONFIG_S3_RESUME=n` — drops legacy-OS S3 resume.
+3. `CONFIG_USB_XHCI=n` — drops USB3 boot (UHCI/EHCI remain).
+4. `CONFIG_SERCON=n`, `CONFIG_LPT=n` — drops serial/parallel extras.
+
+`CONFIG_VGAHOOKS` and `CONFIG_S3_RESUME` are default-on and were on in
+all historical working CSM builds; leave them enabled. There are no
+other OVMF-specific options: `CONFIG_CSM` + `CONFIG_QEMU_HARDWARE`
+is the complete CSM contract (`PERMIT_UNALIGNED_PCIROM` no longer
+exists upstream), and ACPI/SMBIOS are auto-excluded under `CONFIG_CSM`
+because OVMF provides those tables.
+
 ## 3. Build and install into the edk2 tree
 
 ```
