@@ -1,4 +1,7 @@
 Build/
+# Locally-built SeaBIOS CSM payload; see
+# OvmfPkg/Csm/Csm16/BuildFromSeaBIOS.md (never commit a blob)
+OvmfPkg/Csm/Csm16/Csm16.bin
 .DS_Store
 *_extdep/
 *.pyc
